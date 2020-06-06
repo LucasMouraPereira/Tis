@@ -25,8 +25,8 @@ const records = connection.define('records', {
     }
 });
 
-records.sync({force: true}).then(() => {
-    console.log("Tabela Criada");
-});
+// records.sync({force: true}).then(() => {
+//     console.log("Tabela Criada");
+// });
 
 module.exports = records;

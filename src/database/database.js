@@ -1,30 +1,13 @@
-// const { Client } = require('pg');
-
-// const client = new Client({
-//   connectionString: process.env.DATABASE_URL,
-//   ssl: {
-//     rejectUnauthorized: false
-//   }
-// });
-
-// client.connect();
-
-// client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-//   if (err) throw err;
-//   for (let row of res.rows) {
-//     console.log(JSON.stringify(row));
-//   }
-//   client.end();
-// });
-
-
-
 const Sequelize = require("sequelize");
 
-const connection = new Sequelize('hosp', 'root', 'Lucas24056401', {
-    host: 'localhost',
+const connection = new Sequelize('heroku_1eb4d79481fc943', 'b629aed0c63e5a', '43ed9ea7', {
+    host: 'us-cdbr-east-05.cleardb.net',
     dialect: 'mysql',
     timezone: "-03:00"
 });
 
 module.exports = connection;
+
+//b629aed0c63e5a
+//43ed9ea7
+//us-cdbr-east-05.cleardb.net

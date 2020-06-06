@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const connection = require("./database/database");
 const {nome, email, data_retorno, status} = require("./model/record");
 const mail = require("./infra/sendMail");
+const cors = require("cors");
 
 
 //rotas
@@ -18,7 +19,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 //Body parser
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(cors());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 //Database

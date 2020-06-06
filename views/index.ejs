@@ -1,0 +1,64 @@
+<%- include ('./partials/header.ejs') %>
+<div class="table-responsive">
+    <div class="container">
+        <div class="card">
+            <%- include ('./partials/cardHeader.ejs') %>
+            <hr>
+            <div class="card-body ">
+                <div class="container">
+                    <a class="btn btn-success" href="/">Mostrar todos os registros</a>
+                    <hr>
+                    <table class="table table-bordered" id="myTable">
+                        <thead>
+                            <tr>
+                                <th>Numero Secretaria</th>
+                                <th>Nome do paciente</th>
+                                <th>e-mail</th>
+                                <th>Fone</th>
+                                <th>Data do cadastro</th>
+                                <th>Data de retorno</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% records.forEach(records => { %>
+                                <tr>
+                                    <td><%= records.numeroSecretaria %></td>
+                                    <td><%= records.nome %></td>
+                                    <td><%= records.email %></td>
+                                    <td><%= records.telefone %></td>
+                                    <td><%= records.data_cadastro %></td>
+                                    <td><%= records.data_retorno %></td>
+                                    <td><%= records.status %></td>
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="container">
+                        <form method="GET">
+                          <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Selecine o status
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="/export/tocsv">Exportar dados para excel</a>
+                                <% records.forEach(records => { %>
+                                    <a class="dropdown-item" href="/data/<%= records.data_retorno %>/export/tocsv">Exportar dados para excel filtrados por data</a>
+                                <% }) %>
+                                <% records.forEach(records => { %>
+                                    <a class="dropdown-item" href="/status/<%= records.status %>/export/tocsv">Exportar dados para excel filtrados por status</a>
+                                <% }) %>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include ('./partials/footer.ejs') %>

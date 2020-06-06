@@ -1,0 +1,25 @@
+<div class="container">
+<form>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend"> 
+      <select class="btn btn-outline-success dropdown-toggle" id="inlineFormCustomSelect">
+        <div class="dropdown-menu">
+          <option selected>Selecione o Filtro</option>
+          <!-- colocar a rota data -->
+          <option hrel= "/data" value= "5" >Data de Retorno</option>
+          <!-- colocar a rota status -->
+          <option hrel= "/status" value= "6">Status</option>
+        </div>
+      </select> 
+  </div>
+    &ensp;
+      <!-- colocar a rota  :data ou :status -->
+      <input type="text" class="form-control" id="myFilter" onkeyup="filter()" aria-label="Input text com botão dropdown" placeholder=""> 
+      
+    <!-- &ensp; -->
+    <!-- filtar a rota acima -->
+    <!-- <button class ="btn btn-success">Filtar</button> -->
+  </div>
+</form>
+</div>
+<hr/>

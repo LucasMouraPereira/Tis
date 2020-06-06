@@ -1,0 +1,35 @@
+{
+  "name": "hospital_sao_francisco",
+  "version": "1.0.0",
+  "engines": {
+    "node": "12.16.x"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "npm-run-all -p dev:*",
+    "dev:server": "nodemon src/app.js",
+    "dev:queue": "nodemon src/queue.js"
+  },
+  "author": "Lucas Moura Pereira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cron": "^1.8.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "json2csv": "^5.0.0",
+    "mysql2": "^2.1.0",
+    "nodemailer": "^6.4.6",
+    "pg": "^8.2.1",
+    "sequelize": "^5.21.5",
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "sucrase": "^3.14.0"
+  },
+  "description": ""
+}

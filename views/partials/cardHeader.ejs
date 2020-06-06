@@ -1,0 +1,34 @@
+<div class="card-header">
+  <div class="mx-auto" style="width: 900px;">
+      <h3>RELATÓRIO DE PACIENTES DO HOSPITAL SÃO FRANCISCO DE ASSIS</h3>
+  </div>
+  <%- include ('./seach.ejs') %>
+  <div class="container">
+    <form method="GET">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Selecine a data de retorno
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <% records.forEach(records => { %>
+          <a class="dropdown-item" href="data/<%= records.data_retorno %>"><%= records.data_retorno %></a>
+          <% }) %>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr/>
+  <div class="container">
+    <form method="GET">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Selecine o status
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <% records.forEach(records => { %>
+          <a class="dropdown-item" href="status/<%= records.status %>"><%= records.status %></a>
+          <% }) %>
+        </div>
+      </div>
+    </form>
+  </div>
